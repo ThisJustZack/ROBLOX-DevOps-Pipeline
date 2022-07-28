@@ -1,6 +1,18 @@
 # ROBLOX DevOps Pipeline
 
-This is meant to server as a DevOps pipeline template for ROBLOX games.
+This is meant to serve as a DevOps pipeline template for ROBLOX games.
+
+### ***Secrets***
+
+[GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication): Token authenticator for workflow
+
+ROBLOSECURITY: A cookie that is generated for ROBLOX session persistence
+
+ROBLOX_PLACE_ID: The place id of the place to update within a universe
+
+ROBLOX_UNIVERSE_ID: The universe id of the place to update
+
+[ROBLOX_API_KEY](https://create.roblox.com/credentials): The ROBLOX Cloud API key to use for publishing the place
 
 ### ***Tools***
 

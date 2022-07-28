@@ -2,14 +2,18 @@ local RunService = game:GetService("RunService")
 
 local tests = {
     ["Client"] = {
-        ["Phrase"] = function()
+        ["Property/Method"] = {
+            ["Phrase"] = function()
 
-        end
+            end
+        }
     },
     ["Server"] = {
-        ["Phrase"] = function()
+        ["Property/Method"] = {
+            ["Phrase"] = function()
 
-        end
+            end
+        }
     }
 }
 

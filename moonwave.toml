@@ -1,0 +1,20 @@
+title = "ROBLOX-DevOps-Pipeline"
+gitRepoUrl = "https://github.com/Eyryse/ROBLOX-DevOps-Pipeline"
+gitSourceBranch = "master"
+
+changelog = true
+
+classOrder = []
+
+[docusaurus]
+onBrokenLinks = "throw"
+onBrokenMarkdownLinks = "warn"
+favicon = "/"
+
+[home]
+enabled = true
+includeReadme = true
+
+[footer]
+style = "dark"
+copyright = "Copyright © 2022. Built with Moonwave and Docusaurus"
