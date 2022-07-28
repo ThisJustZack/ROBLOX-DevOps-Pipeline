@@ -20,6 +20,8 @@ ROBLOX_UNIVERSE_ID: The universe id of the place to update
 
 [Moonwave](https://eryn.io/moonwave/)
 
+[ROBLOX Cloud CLI](https://github.com/Sleitnick/rbx-cloud-cli)
+
 [ROBLOX Studio](https://setup.rbxcdn.com/RobloxStudioLauncherBeta.exe)
 
 [Rojo](https://rojo.space/)
