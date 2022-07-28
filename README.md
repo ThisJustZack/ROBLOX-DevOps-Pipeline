@@ -2,6 +2,8 @@
 
 This is meant to serve as a DevOps pipeline template for ROBLOX games.
 
+*Note: It is recommended that the place being used is within a test environment and not a production environment, as there is currently no supported way here to do security and UI testing.*
+
 ### ***Secrets***
 
 [GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication): Token authenticator for workflow
