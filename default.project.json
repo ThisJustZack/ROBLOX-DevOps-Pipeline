@@ -31,6 +31,12 @@
                     "$path": "src/main/client"
                 }
             }
+        },
+        "LocalizationService": {
+            "$className": "LocalizationService",
+            "Source": {
+                "$path": "src/localization"
+            }
         }
     }
 }
