@@ -1,0 +1,15 @@
+# Wally directories
+DevPackages/
+Packages/
+
+# Moonwave directory
+build/
+
+# ROBLOX files (Models and Place)
+/*.rbxl
+/*.rbxlx
+/*.rbxm
+/*.rbxmx
+
+# Lock files
+/*.lock

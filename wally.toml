@@ -1,0 +1,11 @@
+[package]
+name = "username/project"
+description = "A base project"
+version = "0.0.1"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "server"
+
+[dependencies]
+
+[dev-dependencies]
+TestEZ = "roblox/testez@0.4.1"

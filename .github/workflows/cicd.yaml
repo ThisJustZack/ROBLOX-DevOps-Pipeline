@@ -1,0 +1,100 @@
+name: CICD
+
+on:
+	push:
+		tags: "v*"
+
+jobs:
+	build:
+		runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.4
+
+      - name: Install Foreman
+        uses: rojo-rbx/setup-foreman@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Selene
+        run: selene src
+
+	test:
+		needs: ["build"]
+		unit-tests:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.4
+
+      - name: Install Foreman
+        uses: rojo-rbx/setup-foreman@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+			- name: Retrieve dependencies
+				run: wally install
+
+      - name: Build test place
+        run: rojo build test.project.json -o test.rbxl
+
+			- name: Validate cookie
+        run: |
+          $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+          $cookie = New-Object System.Net.Cookie
+          $cookie.Name = ".ROBLOSECURITY"
+          $cookie.Value = "${{ secrets.ROBLOSECURITY }}"
+          $cookie.Domain = ".roblox.com"
+          $session.Cookies.Add($cookie);
+          Invoke-WebRequest "https://avatar.roblox.com/v1/avatar" -WebSession $session -UseBasicParsing
+
+			- name: Install Roblox Studio
+        uses: OrbitalOwen/roblox-win-installer-action@1.1
+        with:
+          cookie: ${{ secrets.ROBLOSECURITY }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+			- name: Run client tests
+        shell: bash
+        run: run-in-roblox --place test.rbxl --script test/client/runner.client.lua > test-client-out.txt
+        continue-on-error: true
+
+			- name: Run server tests
+        shell: bash
+        run: run-in-roblox --place test.rbxl --script test/server/runner.server.lua > test-server-out.txt
+        continue-on-error: true
+
+      - name: Check client test status
+        shell: bash
+        run: cat test-client-out.txt | grep "0 failed, 0 skipped" || (cat test-client-out.txt && exit 1)
+
+      - name: Check server test status
+        shell: bash
+        run: cat test-server-out.txt | grep "0 failed, 0 skipped" || (cat test-server-out.txt && exit 1)
+
+	deploy:
+		needs: ["test"]
+		runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.4
+
+      - name: Install Foreman
+        uses: rojo-rbx/setup-foreman@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+			- name: Retrieve dependencies
+				run: wally install
+
+      - name: Build release place
+        run: rojo build default.project.json -o release.rbxl
+
+			- name: Upload place to ROBLOX
+				env:
+					ROBLOX_PLACE_ID: ${{ secrets.ROBLOX_PLACE_ID }}
+					ROBLOX_UNIVERSE_ID: ${{ secrets.ROBLOX_UNIVERSE_ID }}
+					ROBLOX_VERSION_TYPE: ${{ secrets.ROBLOX_VERSION_TYPE }}
+					ROBLOX_API_KEY: ${{ secrets.ROBLOX_API_KEY }}
+				run: rbxcloud experience publish --filename release.rbxl --place-id $ROBLOX_PLACE_ID --universe-id $ROBLOX_UNIVERSE_ID --version-type $ROBLOX_VERSION_TYPE --api-key $ROBLOX_API_KEY
