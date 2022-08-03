@@ -1,3 +1,4 @@
+# Baseline taken from Fusion under the MIT license: https://github.com/Elttob/Fusion/blob/main/.github/workflows/ci.yml
 name: CICD
 
 on:
@@ -95,4 +96,5 @@ jobs:
           PLACE_ID: ${{ secrets.ROBLOX_PLACE_ID }}
           UNIVERSE_ID: ${{ secrets.ROBLOX_UNIVERSE_ID }}
           API_KEY: ${{ secrets.ROBLOX_API_KEY }}
-        run: rbxcloud experience publish --filename release.rbxl --place-id $PLACE_ID --universe-id $UNIVERSE_ID --version-type published --api-key $API_KEY
+          PLACE_FILE: release.rbxl
+        run: rbxcloud experience publish -a "$API_KEY" -f "$PLACE_FILE" -t published -p "$PLACE_ID" -u "$UNIVERSE_ID"

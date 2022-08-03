@@ -15,6 +15,9 @@
             },
             "Test": {
                 "$path": "src/test/storage/shared"
+            },
+            "Type": {
+                "$path": "src/type/server"
             }
         },
         "ServerScriptService": {
@@ -33,6 +36,9 @@
             },
             "Test": {
                 "$path": "src/test/storage/server"
+            },
+            "Type": {
+                "$path": "src/type/shared"
             }
         },
         "StarterPlayer": {

@@ -9,6 +9,9 @@
             },
             "Source": {
                 "$path": "src/main/storage/shared"
+            },
+            "Type": {
+                "$path": "src/type/shared"
             }
         },
         "ServerScriptService": {
@@ -21,6 +24,9 @@
             "$className": "ServerStorage",
             "Source": {
                 "$path": "src/main/storage/server"
+            },
+            "Type": {
+                "$path": "src/type/server"
             }
         },
         "StarterPlayer": {
