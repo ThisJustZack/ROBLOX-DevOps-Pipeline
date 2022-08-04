@@ -40,9 +40,7 @@
         },
         "LocalizationService": {
             "$className": "LocalizationService",
-            "Source": {
-                "$path": "src/localization"
-            }
+            "$path": "src/localization"
         }
     }
 }

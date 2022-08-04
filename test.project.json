@@ -17,7 +17,7 @@
                 "$path": "src/test/storage/shared"
             },
             "Type": {
-                "$path": "src/type/server"
+                "$path": "src/type/shared"
             }
         },
         "ServerScriptService": {
@@ -38,7 +38,7 @@
                 "$path": "src/test/storage/server"
             },
             "Type": {
-                "$path": "src/type/shared"
+                "$path": "src/type/server"
             }
         },
         "StarterPlayer": {
@@ -55,9 +55,7 @@
         },
         "LocalizationService": {
             "$className": "LocalizationService",
-            "Source": {
-                "$path": "src/localization"
-            }
+            "$path": "src/localization"
         }
     }
 }
