@@ -1,5 +1,5 @@
-title = "ROBLOX-DevOps-Pipeline"
-gitRepoUrl = "https://github.com/Eyryse/ROBLOX-DevOps-Pipeline"
+title = "ROBLOX-Git-Test"
+gitRepoUrl = "https://github.com/Eyryse/ROBLOX-Git-Test"
 gitSourceBranch = "master"
 
 changelog = true
@@ -7,7 +7,7 @@ changelog = true
 classOrder = []
 
 [docusaurus]
-onBrokenLinks = "throw"
+onBrokenLinks = "warn"
 onBrokenMarkdownLinks = "warn"
 favicon = "/"
 
@@ -17,4 +17,4 @@ includeReadme = true
 
 [footer]
 style = "dark"
-copyright = "Copyright © 2022. Built with Moonwave and Docusaurus"
+copyright = "Copyright © 2022 Eyryse. Built with Moonwave and Docusaurus"
