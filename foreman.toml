@@ -1,5 +1,0 @@
-[tools]
-rbxcloud = { source = "Sleitnick/rbxcloud", version = "x" }
-rojo = { source = "rojo-rbx/rojo", version = "x" }
-selene = { source = "Kampfkarren/selene", version = "x" }
-wally = { source = "UpliftGames/wally", version = "x" }

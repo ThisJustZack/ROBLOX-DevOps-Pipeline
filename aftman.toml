@@ -1,0 +1,7 @@
+# For more information, see https://github.com/LPGhatguy/aftman
+
+[tools]
+rbxcloud = "Sleitnick/rbxcloud@0.2.1"
+rojo = "rojo-rbx/rojo@7.2.1"
+selene = "Kampfkarren/selene@0.20.0"
+wally = "UpliftGames/wally@0.3.1"

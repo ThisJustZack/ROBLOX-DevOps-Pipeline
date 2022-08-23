@@ -16,7 +16,7 @@ ROBLOX_UNIVERSE_ID: The universe id of the place to update
 
 ### ***Tools***
 
-[Foreman](https://github.com/Roblox/foreman)
+[Aftman](https://github.com/LPGhatguy/aftman)
 
 [Moonwave](https://eryn.io/moonwave/)
 
